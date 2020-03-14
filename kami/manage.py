@@ -3,7 +3,8 @@ import os
 import sys
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kami.settings')
+    profile = os.environ.get('PROFILE', 'develop')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kami.settings.%s' % profile)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

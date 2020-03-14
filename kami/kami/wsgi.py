@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kami.settings')
+profile = os.environ.get('PROFILE', 'develop')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kami.settings.%s' % profile)
 
 application = get_wsgi_application()
