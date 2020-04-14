@@ -5,7 +5,7 @@ from .models import Link, SideBar
 
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ('title', 'href', 'status', 'weight', 'created_time')
+    list_display = ('title', 'href', 'status', 'weight', 'created_at')
     fields = ['title', 'href', 'status', 'weight']
 
     def save_model(self, request, obj, form, change):
